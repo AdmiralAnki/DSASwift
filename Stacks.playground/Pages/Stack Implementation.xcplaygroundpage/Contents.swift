@@ -4,6 +4,8 @@ import Foundation
 struct Stack<T>{
     private var list = Array<T>()
     
+    var isEmpty:Bool{ list.isEmpty }
+    
     mutating func push(value:T){
         self.list.append(value)
     }
