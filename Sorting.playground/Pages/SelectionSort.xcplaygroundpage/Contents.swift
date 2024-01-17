@@ -1,16 +1,12 @@
 
 
-//
+/// For every iteration i find the min where min is the index of the smallest remaining element and swap it with element at index i
 func selectionSort(_ nums: inout [Int]){
     
     for i in 0..<nums.count{
         let minIndex = getMinIndex(nums,i)
-        print("minIndex: ",minIndex)
         swap(nums: &nums, i, minIndex)
-//        print("iter: ",i," ",nums)
     }
-    
-    print("After sort: ",nums)
 }
 
 func swap(nums: inout [Int],_ index1:Int,_ index2:Int){
@@ -34,3 +30,4 @@ func getMinIndex(_ nums:[Int],_ start:Int)->Int{
 var array = [3,55,12,78,41,2,6,99,31,1,28,98]
 
 selectionSort(&array)
+print(array)

@@ -3,5 +3,7 @@
     <pages>
         <page name='InsertionSort'/>
         <page name='SelectionSort'/>
+        <page name='MergeSort'/>
+        <page name='ShuffleSort'/>
     </pages>
 </playground>
