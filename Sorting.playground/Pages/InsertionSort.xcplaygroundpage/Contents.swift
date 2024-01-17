@@ -1,11 +1,12 @@
 //: [Previous](@previous)
 
-
+///In iteration i, swap a[i] with each larger entry to its left
 func insertionSort(_ nums: inout [Int]){
     for i in 0..<nums.count{
         for j in stride(from: i, through: 1, by: -1){
             if nums[j]<nums[j-1]{
-                swap(nums: &nums, index1:j, index2: j-1)
+//                swap(nums: &nums, index1:j, index2: j-1)
+                nums.swapAt(j, j-1)
             }else{
                 break
             }
