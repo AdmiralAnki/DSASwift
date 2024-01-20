@@ -26,7 +26,7 @@ public class Iteration{
     }
     
     
-    
+    //Two pointers
     public class func reverseArray<T>(array: inout [T]){
         var start = 0
         var end = array.count-1
@@ -37,4 +37,40 @@ public class Iteration{
             end-=1
         }
     }
+    
+    public class func removeDuplicates<T:Equatable>(array: inout [T]){
+        var j = 0
+        
+        for i in 0..<array.count{
+            
+            if array[i] != array[j]{
+                j+=1
+                array[j] = array[i]
+            }
+        }
+    }
+    
+    public class func slidingWindow(_ nums:[Int],_ windowSize:Int){
+        var i=0
+        var maxSum = 0
+        var currSum = 0
+        
+        for j in 0..<nums.count {
+            
+            currSum += nums[j]
+            print("[i,j]: [\(i), \(j)], currSum: ",currSum)
+            
+            // Check if the window has reached the desired size
+            if j >= windowSize-1 {
+                // Slide the window forward
+                maxSum = max(maxSum,currSum)
+                currSum -= nums[i]
+                i += 1
+            }
+        }
+        
+        print(maxSum)
+    }
 }
+
+
