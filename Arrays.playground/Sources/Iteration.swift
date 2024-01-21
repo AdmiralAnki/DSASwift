@@ -50,6 +50,39 @@ public class Iteration{
         }
     }
     
+    public class func removeValue<T:Equatable>(nums: inout [T],_ val:T)->Int{
+        guard !nums.isEmpty else { return 0}
+                
+        var i = 0
+        
+        for j in 0..<nums.count{
+            if nums[j] != val{
+                nums.swapAt(i, j)
+                i+=1
+            }
+        }
+        
+        return i
+    }
+    
+    
+    public class func removeValues<T:Hashable>(nums: inout [T],_ val:[T])->Int{
+        guard !nums.isEmpty else { return 0}
+                
+        let values = Set(val)
+        
+        var i = 0
+        
+        for j in 0..<nums.count{
+            if !values.contains(nums[j]){
+                nums.swapAt(i, j)
+                i+=1
+            }
+        }
+        
+        return i
+    }
+    
     public class func slidingWindow(_ nums:[Int],_ windowSize:Int){
         var i=0
         var maxSum = 0
